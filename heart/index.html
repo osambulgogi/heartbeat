@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>heart</title>
+<style>
+  body{
+    margin:0;
+  }
+  .back{
+    margin:0;
+    width:100%;
+    height:100%;
+    position:fixed;
+    animation-name:back;
+    animation-duration:1s;
+    animation-iteration-count:infinite;
+
+  }
+  .heart{
+    margin:auto;
+    position:absolute;
+    width:200px;
+    height:200px;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background-color:pink;
+    transform:rotate(-45deg);
+    animation-name:heartbeat;
+    animation-duration:1s;
+    animation-iteration-count:infinite;
+  }
+  .heart::after{
+    content:"";
+
+    left:100px;
+    width:200px;
+    height:200px;
+    border-radius:50%;
+    background-color:pink;
+    position:absolute;
+  }
+  .heart::before{
+    content:"";
+    top:-100px;
+    height:200px;
+    width:200px;
+    background-color:pink;
+    position:absolute;
+    border-radius:50%;
+  }
+  @keyframes heartbeat{
+    0%{
+      transform:rotate(-45deg) scale(1);
+    }
+    50%{
+      transform:rotate(-45deg) scale(0.6);
+    }
+    100%{
+      transform:rotate(-45deg) scale(1);
+    }
+  }
+  @keyframes back{
+    50%{
+      background:#ffe6f2;
+    }
+  }
+</style>
+  </head>
+  <body>
+    <div class="heart">
+
+    </div>
+    <div class="back">
+
+    </div>
+  </body>
+</html>
